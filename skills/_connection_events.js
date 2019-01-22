@@ -10,7 +10,7 @@ module.exports = function(controller) {
       bot.startConversation(message, function(err, convo) {
 
         convo.say({
-          text: 'Hello human! I am brand new Botkit bot, ready to be customized to your needs!',
+          text: 'Hello there! I am your Botkit bot Charles, how may I be at your service?',
           quick_replies: [
             {
               title: 'Help',
@@ -79,7 +79,7 @@ module.exports = function(controller) {
         convo.addMessage({
           text: 'I do not know how to help with that. Say `help` at any time to access this menu.'
         },'end');
-                
+
         // set up docs threads
         convo.addMessage({
           text: 'Botkit is extensively documented! Here are some useful links:\n\n[Botkit Studio Help Desk](https://botkit.groovehq.com/help_center)\n\n[Botkit Anywhere README](https://github.com/howdyai/botkit-starter-web/blob/master/readme.md#botkit-anywhere)\n\n[Botkit Developer Guide](https://github.com/howdyai/botkit/blob/master/readme.md#build-your-bot)',
