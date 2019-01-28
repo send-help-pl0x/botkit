@@ -7,8 +7,9 @@
   "jest": {
     "verbose": true,
     "testEnvironment": "node",
-    "testPathIgnorePatterns" : [
-      "/node_modules/", "/test/legacy/"
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/test/legacy/"
     ],
     "testMatch": [
       "**/test/**/*.js"
@@ -19,7 +20,7 @@
     "async": "^2.6.1",
     "back": "^1.0.2",
     "body-parser": "^1.18.3",
-    "botbuilder": "^3.15.0",
+    "botbuilder": "^4.2.0",
     "botkit-studio-sdk": "^1.0.8",
     "chalk": "^2.4.1",
     "ciscospark": "^1.32.23",
@@ -44,8 +45,9 @@
     "ws": "^6.1.0"
   },
   "devDependencies": {
-    "jest-cli": "^23.6.0",
     "eslint": "^5.7.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
     "mkdirp": "^0.5.1",
     "mocha": "^5.1.1",
     "nock": "^10.0.0",
@@ -63,7 +65,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/howdyai/botkit.git"
+    "url": "git+https://github.com/howdyai/botkit.git"
   },
   "bugs": {
     "url": "https://github.com/howdyai/botkit/issues"
@@ -84,5 +86,11 @@
     "google hangouts"
   ],
   "author": "ben@howdy.ai",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  }
 }
