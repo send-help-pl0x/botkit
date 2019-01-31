@@ -1,6 +1,23 @@
-.env
-.data
-node_modules
-components/routes/_*
-.sass-cache/
+testbot/
+node_modules/
+start.sh
+start_button.sh
+db/
+examples/db_slackbutton_bot/
+examples/db_slackbutton_incomingwebhook/
+examples/db_slackbutton_slashcommand/
+examples/db_team_bot/
 .DS_Store
+*/.DS_Store
+.env
+.idea
+.vscode
+coverage
+
+# simple_storage files
+/channels/
+/teams/
+/users/
+
+# temp test files
+tests/**/temp/
