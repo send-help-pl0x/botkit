@@ -1,7 +1,7 @@
 module.exports = function (controller) {
-	controller.hears("urmomgay", "message_received", function (bot, message) {
+	controller.hears(["urmomgay"], "message_received", function (bot, message) {
 		bot.startConversation(message, function (err, convo) {
-			convo.ask({
+			convo.say({
 				test: "no u?",
 				quick_replies: [{
 						title: "Test message",
