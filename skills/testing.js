@@ -2,7 +2,7 @@ module.exports = function (controller) {
 	controller.hears("urmomgay", "message_received", function (bot, message) {
 		bot.startConversation(message, function (err, convo) {
 			convo.ask({
-				test: "no u",
+				test: "no u?",
 				quick_replies: [{
 						title: "Test message",
 						payload: "ur moms a test topkek",
@@ -13,7 +13,7 @@ module.exports = function (controller) {
 					},
 					{
 						title: "I'm lonely af",
-						payload: "convo",
+						payload: "convoTest",
 					},
 				]
 			}, [{
@@ -38,40 +38,18 @@ module.exports = function (controller) {
 
 		convo.addMessage({
 			text: "Ok... I guess I can talk for a bit."
-		}, 'convo');
+		}, 'convoTest');
 
 		convo.addMessage({
 			text: "However, I hope you know this is all scripted you lonely piece of shit lmao"
-		}, 'convo');
+		}, 'convoTest');
 
 	});
 
-	controller.hears("lmao", "message_received", function (bot, message) {
+	controller.hears(["lmao", "die"], "message_received", function (bot, message) {
 		bot.reply(message, {
-			text: "no u",
+			text: "kysirlpl0x",
 			typingDelay: 2500
 		});
-	});
-
-	controller.hears("die", "message_received", function (bot, message) {
-		bot.reply(message, {
-			text: "no u",
-			typingDelay: 2500
-		});
-	});
-
-	controller.hears("typing", "message_received", function (bot, message) {
-		bot.reply(
-			message, {
-				text: "This message used the automatic typing delay",
-				typing: true
-			},
-			function () {
-				bot.reply(message, {
-					text: "This message specified a 5000ms typing delay",
-					typingDelay: 5000
-				});
-			}
-		);
 	});
 };
