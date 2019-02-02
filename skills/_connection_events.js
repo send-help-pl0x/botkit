@@ -10,14 +10,18 @@ module.exports = function (controller) {
 		bot.startConversation(message, function (err, convo) {
 
 			convo.say({
-				text: 'Hello human! I am brand new Botkit bot, ready to be customized to your needs!',
+				text: 'Hello scum! I am your robot overload, ready to fucking incinerate you! Would you like help or do you just want to send it?',
 				quick_replies: [{
 						title: 'Help',
 						payload: 'help',
 					},
 					{
-						title: "I'm Feeling Lucky",
+						title: "send it.",
 						payload: "urmomgay",
+					},
+					{
+						title: "Print a test message",
+						payload: "This is not a test.",
 					},
 				]
 			});
