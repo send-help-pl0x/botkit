@@ -8,8 +8,7 @@
     "verbose": true,
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/test/legacy/"
+      "/node_modules/"
     ],
     "testMatch": [
       "**/test/**/*.js"
