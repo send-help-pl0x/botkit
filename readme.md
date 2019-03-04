@@ -1,5 +1,7 @@
 # Botkit Anywhere
 
+[![Build Status](https://travis-ci.org/send-help-pl0x/botkit.svg?branch=buitim%2Ftesting)](https://travis-ci.org/send-help-pl0x/botkit)
+
 Embed a bot in any web page or app with Botkit for the Web.
 
 Botkit Anywhere is a self-contained chat server, API and web-based messaging client that has been built on top of the industry leading Botkit development stack.
@@ -8,9 +10,9 @@ Botkit Anywhere is a self-contained chat server, API and web-based messaging cli
 
 You can deploy this starter kit project directly to Glitch, or clone it to your own development environment:
 
-* [Remix on Glitch](https://glitch.com/~botkit-web)
+-   [Remix on Glitch](https://glitch.com/~botkit-web)
 
-* Use the Botkit command line utility to install locally:
+-   Use the Botkit command line utility to install locally:
 
 ```bash
 npm i -g botkit
@@ -31,7 +33,6 @@ of your bot stays clean and easy to maintain by separating the form from the fun
 
 [Botkit CMS](https://github.com/howdyai/botkit-cms)
 
-
 ## The full power of Botkit, in your app or site
 
 Botkit's SDK powers tens-of-thousands of bots, and supports development of chatbots on
@@ -41,9 +42,8 @@ including plugins that add compatibility with top A.I. technologies like IBM Wat
 New code-driven features can be added to this starter kit by creating "skills" which are
 Javascript modules containing a set of specialized pattern matchers, handler functions and middlewares.
 
-* **[How to build Botkit Skill Modules](docs/how_to_build_skills.md)**
-* [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
-
+-   **[How to build Botkit Skill Modules](docs/how_to_build_skills.md)**
+-   [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
 
 ## Customizable web-based chat client
 
@@ -59,11 +59,11 @@ The chat client is built with HTML, CSS and vanilla Javascript.
 Developers can customize the look and feel of the client by modifying the included markup and CSS.
 New chat features such as custom cards or actions can be added with just a little bit of code.
 
-* **[Web Chat Client Overview](docs/botkit_web_client.md)**
-* [How to embed a bot in your website](docs/botkit_web_client.md#embed-botkit-in-a-website-with-iframes)
-* [How to customize the look and feel of your web chat](docs/botkit_web_client.md#customize-the-look-and-feel-of-the-chat-interface)
-* [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
-* [How to share user account/profile info with Botkit](docs/botkit_web_client.md#share-user-accounts--profile-data-with-botkit)
+-   **[Web Chat Client Overview](docs/botkit_web_client.md)**
+-   [How to embed a bot in your website](docs/botkit_web_client.md#embed-botkit-in-a-website-with-iframes)
+-   [How to customize the look and feel of your web chat](docs/botkit_web_client.md#customize-the-look-and-feel-of-the-chat-interface)
+-   [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
+-   [How to share user account/profile info with Botkit](docs/botkit_web_client.md#share-user-accounts--profile-data-with-botkit)
 
 ## Chat Server and API
 
@@ -74,26 +74,27 @@ It is a great solution for including one-on-one chat in a web site or native app
 Additionally, Botkit Anywhere includes APIs for retrieving a user's conversation history,
 and account-linking features that enable you to identify existing users to your bot.
 
-* **[Chat Server Overview](docs/botkit_chat_server.md)**
-* [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
-* [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
-* [How to enable message history API](docs/botkit_chat_server.md#enable-message-history)
-* [Enable or Disable Learning Mode](docs/botkit_chat_server.md#learning-mode)
+-   **[Chat Server Overview](docs/botkit_chat_server.md)**
+-   [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
+-   [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
+-   [How to enable message history API](docs/botkit_chat_server.md#enable-message-history)
+-   [Enable or Disable Learning Mode](docs/botkit_chat_server.md#learning-mode)
 
 # Developer & Support Community
 
 You can find full documentation for Botkit on [our website](https://botkit.ai/docs).
 
-###  Need more help?
-* Glitch allows users to ask the community for help directly from the editor! For more information on raising your hand, [read this blog post.](https://medium.com/glitch/just-raise-your-hand-how-glitch-helps-aa6564cb1685)
+### Need more help?
 
-* Join our thriving community of Botkit developers and bot enthusiasts at large. Over 9000 members strong, [our open Slack group](http://community.botkit.ai) is _the place_ for people interested in the art and science of making bots.
+-   Glitch allows users to ask the community for help directly from the editor! For more information on raising your hand, [read this blog post.](https://medium.com/glitch/just-raise-your-hand-how-glitch-helps-aa6564cb1685)
 
- Come to ask questions, share your progress, and commune with your peers!
+-   Join our thriving community of Botkit developers and bot enthusiasts at large. Over 9000 members strong, [our open Slack group](http://community.botkit.ai) is _the place_ for people interested in the art and science of making bots.
 
-* We also host a [regular meetup and annual conference called TALKABOT.](http://talkabot.ai) Come meet and learn from other bot developers!
+Come to ask questions, share your progress, and commune with your peers!
 
- [Full video of our 2016 event is available on Youtube.](https://www.youtube.com/playlist?list=PLD3JNfKLDs7WsEHSal2cfwG0Fex7A6aok)
+-   We also host a [regular meetup and annual conference called TALKABOT.](http://talkabot.ai) Come meet and learn from other bot developers!
+
+[Full video of our 2016 event is available on Youtube.](https://www.youtube.com/playlist?list=PLD3JNfKLDs7WsEHSal2cfwG0Fex7A6aok)
 
 # About Botkit
 
