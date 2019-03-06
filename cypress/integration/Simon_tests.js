@@ -92,7 +92,7 @@ describe('Simon Louie\'s Tests', function() {
         cy.get('input[id="messenger_input"]').invoke('val', largeInput_100)
         cy.contains('Send').click()
 		
-		cy.wait(1000);
+		cy.wait(3000);
 		
 		cy.get(' .message > p ').last().should('exist')
 	
@@ -103,7 +103,7 @@ describe('Simon Louie\'s Tests', function() {
 		cy.get('input[id="messenger_input"]').invoke('val', largeInput_200)
         cy.contains('Send').click()
 		
-		cy.wait(1000);
+		cy.wait(3000);
 		
 		cy.get(' .message > p ').last().should('exist')
 		
@@ -114,7 +114,7 @@ describe('Simon Louie\'s Tests', function() {
 		cy.get('input[id="messenger_input"]').invoke('val', largeInput_400)
 		cy.contains('Send').click()
 		
-		cy.wait(1000);
+		cy.wait(3000);
 	
 		cy.get(' .message > p ').last().should('exist')
 				
