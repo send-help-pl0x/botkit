@@ -24,7 +24,7 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.wait(500);
 		
-		cy.get(' :nth-child(4) > .message > p ').should('contain', 'I heard a test')
+		cy.get(' .message > p ').last().should('contain', 'I heard a test')
 
 		
 		cy.get('input[id="messenger_input"]').type('123testABC')
@@ -32,7 +32,7 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.wait(500);
 		
-		cy.get(' :nth-child(6) > .message > p ').should('contain', 'I heard a test')
+		cy.get(' .message > p ').last().should('contain', 'I heard a test')
 		
 		
 		cy.get('input[id="messenger_input"]').type('123ABCtest')
@@ -40,7 +40,7 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.wait(500);
 		
-		cy.get(' :nth-child(8) > .message > p ').should('contain', 'I heard a test')
+		cy.get(' .message > p ').last().should('contain', 'I heard a test')
 		
     })
 	
@@ -49,28 +49,27 @@ describe('Simon Louie\'s Tests', function() {
         cy.get('input[id="messenger_input"]').type('help123ABC')
         cy.contains('Send').click()
 		
-		cy.wait(2000);
+		cy.wait(3000);
 		
-		cy.get(' :nth-child(10) > .message > p ')
+		cy.get(' .message > p ').last()
 		  .should('contain', 'I can point you to resources, and connect you with experts who can help.')
 
 		  
 		cy.get('input[id="messenger_input"]').type('123helpABC')
         cy.contains('Send').click()
 		
-		cy.wait(2000);
+		cy.wait(3000);
 		
-		cy.get(' :nth-child(12) > .message > p ')
-		  .should('exist')
-		  .should('not.contain', 'I can point you to resources, and connect you with experts who can help.')
+		cy.get(' .message > p ').last()
+		  .should('contain', 'I can point you to resources, and connect you with experts who can help.')
 		
 
 		cy.get('input[id="messenger_input"]').type('123ABChelp')
         cy.contains('Send').click()
 		
-		cy.wait(2000);
+		cy.wait(3000);
 		
-		cy.get(' :nth-child(14) > .message > p ')
+		cy.get(' .message > p ').last()
 		  .should('contain', 'I can point you to resources, and connect you with experts who can help.')
 		
     })
@@ -83,7 +82,7 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.wait(1000);
 		
-		cy.get(' :nth-child(16) > .message > p ').should('exist')
+		cy.get(' .message > p ').last().should('exist')
 		
 		
 		cy.get('input[id="messenger_input"]').invoke('val', largeInput_200)
@@ -91,7 +90,7 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.wait(1000);
 		
-		cy.get(' :nth-child(18) > .message > p ').should('exist')
+		cy.get(' .message > p ').last().should('exist')
 		
 		
 		cy.get('input[id="messenger_input"]').invoke('val', largeInput_400)
@@ -99,22 +98,21 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.wait(1000);
 	
-		cy.get(' :nth-child(20) > .message > p ').should('exist')
-		
+		cy.get(' .message > p ').last().should('exist')
+				
     })
 	
-	it('[+] Rapidly enter many large inputs and verify that there is some kind of output for each', function () {
+	it('[+] Quickly enter many large inputs and verify that there is some kind of output', function () {
 
-		for (var i = 0; i < 100; i++) {
+		for (var i = 0; i < 50; i++) {
 			
-			 cy.get('input[id="messenger_input"]').invoke('val', largeInput_400)
-			 cy.contains('Send').click()
-			 
+			cy.get('input[id="messenger_input"]').invoke('val', largeInput_400)
+			cy.contains('Send').click()
+			
 		}
-	
-		cy.get(' :nth-child(20) ').nextAll().should('have.length', 200)
-		
+	   
+		cy.get(' .message > p ').last().should('exist')
+				
     })
 	
-
 })
