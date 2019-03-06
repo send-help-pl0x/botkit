@@ -17,7 +17,7 @@ describe('Simon Louie\'s Tests', function() {
 	})
 	
 
-    it('[+] Enter input containing keyword "test" as substring and verify output', function () {
+    it('[+] Enter input containing keyword "test" as substring ("test123ABC") and verify output', function () {
 		
         cy.get('input[id="messenger_input"]').type('test123ABC')
         cy.contains('Send').click()
@@ -26,6 +26,9 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.get(' .message > p ').last().should('contain', 'I heard a test')
 
+	})
+	
+	it('[+] Enter input containing keyword "test" as substring ("123testABC") and verify output', function () {
 		
 		cy.get('input[id="messenger_input"]').type('123testABC')
         cy.contains('Send').click()
@@ -34,6 +37,9 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.get(' .message > p ').last().should('contain', 'I heard a test')
 		
+	})
+	
+	it('[+] Enter input containing keyword "test" as substring ("123ABCtest") and verify output', function () {
 		
 		cy.get('input[id="messenger_input"]').type('123ABCtest')
         cy.contains('Send').click()
@@ -44,7 +50,7 @@ describe('Simon Louie\'s Tests', function() {
 		
     })
 	
-	it('[+] Enter input that contains known input "help" as substring and verify output', function () {
+	it('[+] Enter input containing keyword "help" as substring ("help123ABC") and verify output', function () {
 	
         cy.get('input[id="messenger_input"]').type('help123ABC')
         cy.contains('Send').click()
@@ -53,17 +59,23 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.get(' .message > p ').last()
 		  .should('contain', 'I can point you to resources, and connect you with experts who can help.')
-
 		  
+	 })
+
+	it('[+] Enter input containing keyword "help" as substring ("123helpABC") and verify output', function () {
+		
 		cy.get('input[id="messenger_input"]').type('123helpABC')
         cy.contains('Send').click()
 		
 		cy.wait(3000);
 		
 		cy.get(' .message > p ').last()
-		  .should('contain', 'I can point you to resources, and connect you with experts who can help.')
-		
+		  .should('not.contain', 'I can point you to resources, and connect you with experts who can help.')
+	
+	})
 
+	it('[+] Enter input containing keyword "help" as substring ("123ABChelp") and verify output', function () {
+		
 		cy.get('input[id="messenger_input"]').type('123ABChelp')
         cy.contains('Send').click()
 		
@@ -75,7 +87,7 @@ describe('Simon Louie\'s Tests', function() {
     })
 
 	
-	it('[+] Enter large input and verify that there is some kind of output', function () {
+	it('[+] Enter large input (100 words) and verify that there is some kind of output', function () {
 
         cy.get('input[id="messenger_input"]').invoke('val', largeInput_100)
         cy.contains('Send').click()
@@ -83,7 +95,10 @@ describe('Simon Louie\'s Tests', function() {
 		cy.wait(1000);
 		
 		cy.get(' .message > p ').last().should('exist')
-		
+	
+	})
+	
+	it('[+] Enter large input (200 words) and verify that there is some kind of output', function () {
 		
 		cy.get('input[id="messenger_input"]').invoke('val', largeInput_200)
         cy.contains('Send').click()
@@ -92,7 +107,10 @@ describe('Simon Louie\'s Tests', function() {
 		
 		cy.get(' .message > p ').last().should('exist')
 		
+	})
 		
+	it('[+] Enter large input (400 words) and verify that there is some kind of output', function () {
+	
 		cy.get('input[id="messenger_input"]').invoke('val', largeInput_400)
 		cy.contains('Send').click()
 		
@@ -101,6 +119,7 @@ describe('Simon Louie\'s Tests', function() {
 		cy.get(' .message > p ').last().should('exist')
 				
     })
+
 	
 	it('[+] Quickly enter many large inputs and verify that there is some kind of output', function () {
 
