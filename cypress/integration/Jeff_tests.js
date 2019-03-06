@@ -74,7 +74,7 @@ describe('Jeff test boi', function(){
         cy.contains('Send').click()
 
         cy.get(':nth-child(12) > .message > p')
-          .should('contain', 'I heard a test')
+          .should('not.contain', 'I heard a test')
     })
 
     it('[+] After "help" conversation, type \'test\'', function(){
