@@ -102,5 +102,19 @@ describe('Simon Louie\'s Tests', function() {
 		cy.get(' :nth-child(20) > .message > p ').should('exist')
 		
     })
+	
+	it('[+] Rapidly enter many large inputs and verify that there is some kind of output for each', function () {
+
+		for (var i = 0; i < 100; i++) {
+			
+			 cy.get('input[id="messenger_input"]').invoke('val', largeInput_400)
+			 cy.contains('Send').click()
+			 
+		}
+	
+		cy.get(' :nth-child(20) ').nextAll().should('have.length', 200)
+		
+    })
+	
 
 })
