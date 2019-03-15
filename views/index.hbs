@@ -1,23 +1,14 @@
-<div id="home">
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+	<h1>I'm a bot!</h1>
     <div id="homepage_bot">
         <iframe id="botkit_client" src="/chat.html"></iframe>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="jumbotron-fluid">
-                <h1>Testerssss</h1>
-            </div>
-        </div>
-    </div>
-    <div id="welcome">
-        <h1>I'm a bot!</h1>
-        <p><a href="/chat.html">Make me full screen</a></p>
-        <p><a href="/embed">Embed me in a web site</a></p>
-        <p><a href="https://github.com/howdyai/botkit-starter-web">Starter Kit Documentation</a></p>
-        <p><a href="https://botkit.ai/docs">Botkit SDK Documentation</a></p>
-    </div>
+	<div class="d-inline-flex mt-3">
+		<a class="btn btn-sm btn-primary m-1" href="/chat.html">Make me full screen</a>
+		<a class="btn btn-sm btn-primary m-1" href="/embed">Embed me in a web site</a>
+	</div>
 </div>
 <script src="/embed.js"></script>
 <script>
-  Botkit.boot({});
+	Botkit.boot({});
 </script>
