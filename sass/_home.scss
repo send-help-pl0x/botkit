@@ -1,3 +1,4 @@
+
 #home {
     @include clearfix;
     position: relative;
@@ -24,8 +25,20 @@
 }
 
 .jumbotron-fluid {
-    background-color: #543654;
+   
   }
 .jumbotron-fluid h1 {
+
+}
+
+#header {
+    
+    background-image: url("../confetti_white.png");
+    background-repeat: repeat;
+    background-color: $botkit_purple;
+}
+
+.btn-purple {
+    background-color: $botkit_purple;
     
 }
