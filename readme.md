@@ -2,11 +2,21 @@
 
 [![Build Status](https://travis-ci.org/send-help-pl0x/botkit.svg?branch=buitim%2Ftesting)](https://travis-ci.org/send-help-pl0x/botkit)
 
+- [Botkit Anywhere](#botkit-anywhere)
+	- [Quick Start Guide](#quick-start-guide)
+	- [Add Features with Botkit CMS](#add-features-with-botkit-cms)
+	- [The full power of Botkit, in your app or site](#the-full-power-of-botkit-in-your-app-or-site)
+	- [Customizable web-based chat client](#customizable-web-based-chat-client)
+	- [Chat Server and API](#chat-server-and-api)
+- [Developer & Support Community](#developer--support-community)
+		- [Need more help?](#need-more-help)
+- [About Botkit](#about-botkit)
+
 Embed a bot in any web page or app with Botkit for the Web.
 
 Botkit Anywhere is a self-contained chat server, API and web-based messaging client that has been built on top of the industry leading Botkit development stack.
 
-## Get Started
+## Quick Start Guide
 
 You can deploy this starter kit project directly to Glitch, or clone it to your own development environment:
 
@@ -18,6 +28,72 @@ You can deploy this starter kit project directly to Glitch, or clone it to your 
 npm i -g botkit
 botkit new -p web
 ```
+
+Once the environment is created, follow these next steps to get it up and running:
+
+-	If you decided to manually build the web environment, in your `bot.js` file, create an instance of the bot using `Botkit.anywhere()`. This will create a Botkit controller with all of the core features as well as some additonal methods.
+-	Alternatively, if you used the automated method of building the environment, simply open `bot.js` and look for `bot_options`. Here, you can customize your bot's typing delay factor, enable/disable debug mode, and decide whether to show a typing indicator.
+
+Here are the following properties you can edit when using the Bot controller:
+
+
+| Name              | Type    | Description                                          |
+| ----------------- | ------- | ---------------------------------------------------- |
+| studio_token      | String  | An API token from Botkit Studio                      |
+| debug             | Boolean | Enable debug logging                                 |
+| replyWithTyping   | Boolean | Send typing indicators automatically (default false) |
+| typingDelayFactor | Float   | Adjust the speed of the typing delay                 |
+
+When using Botkit Anywhere and the built-in web chat client, Botkit will fire a small number of native events. By default, there are four built-in events:
+
+| Event            | Description                                                    |
+| ---------------- | -------------------------------------------------------------- |
+| message_received | the bot has received a message                                 |
+| hello            | a new user has connected to the bot                            |
+| welcome_back     | a returning user has established a new connection to the bot   |
+| reconnect        | an ongoing user session has experienced a disconnect/reconnect |
+
+While we do have built-in events, you are free to add your own as well! If you automatically built the environment via the helper tool, check `skills/_connection_events.js` for and example of how t utilize these events. Here, we use specifically the `hello` and the `welcome_back` events for the `conductOnboarding` method.
+
+A developer can also add quick replies. Quick replies are buttons that appear at the bottom of the message client, and offer suggested replies to the user. Clicking a quick reply is essentially the same as the user typing the suggested reply and sending it as a message.
+
+To add quick replies to Botkit Web messages, include a `quick_replies` field that includes an array of objects, each with a `title` and a `payload`. The title will displayed on the button itself, while the payload is the actual text sent back to the bot by the user. See below for an example entry:
+
+```
+var reply = {
+  text: 'Look, quick replies!',
+  quick_replies: [
+      {
+          title: 'Hello',
+          payload: 'hello'
+      },
+      {
+          title: 'Help me!',
+          payload: 'help'
+      },
+  ]
+}
+```
+
+We can also send file attachments! Files can range from images, to PDFs, to MP3s. To do this, we will need to add a `files` field that includes an array of objects, each with a `url` and an `image` field. The URL field should contain a valid URL otherwise it simply won't work. The image should also be set to `true` if the file is an image. See below for an example entry:
+
+```
+var reply = {
+  text: 'Look, an image!',
+  files: [
+      {
+        url: 'http://tableflipper.com/IRX2.gif',
+        image: true
+      }
+  ]
+}
+```
+
+Finally, we have some methods to edit the bot's behavior. In this quick start guide, we will specifically be looking at how to edit the typing delay and whether to show a typing indicator.
+
+To show a typing indicator, we can utilize a simple method of the controller object. `bot.replyWithTyping(message, reply)` works just like the normal bot.reply(), but instead of sending the message immediately, sends a typing indicator first, then waits for a short period before sending the actual message. To use this, put what you are listening for as `message` and what you want to respond with as `reply`. The delay factor is set in `typingDelayFactor` on the bot controller instantiation.
+
+That covers all of the basics! For more in depth information, please refer to our extended and thorough "Get Started" guide available in our [documentation here](https://botkit.ai/getstarted.html).
 
 ## Add Features with Botkit CMS
 
