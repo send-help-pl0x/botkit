@@ -1,0 +1,31 @@
+{
+  "name": "@packages/https-proxy",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run check-deps-pre",
+    "start": "node index.js",
+    "check-deps": "node ../../scripts/check-deps.js --verbose",
+    "check-deps-pre": "npm run check-deps -- --prescript",
+    "clean-deps": "rm -rf node_modules",
+    "pretest": "npm run check-deps-pre",
+    "test": "cross-env NODE_ENV=test bin-up mocha --reporter mocha-multi-reporters --reporter-options configFile=../../mocha-reporter-config.json",
+    "pretest-watch": "npm run check-deps-pre",
+    "test-watch": "cross-env NODE_ENV=test bin-up mocha --watch",
+    "https": "node https.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "bluebird": "3.5.3",
+    "debug": "2.6.9",
+    "fs-extra": "0.30.0",
+    "lodash": "4.17.11",
+    "node-forge": "0.6.49",
+    "semaphore": "1.1.0",
+    "server-destroy-vvo": "1.0.1",
+    "ssl-root-cas": "1.2.5"
+  }
+}
